@@ -3,7 +3,7 @@
 public class MainMenuController : MonoBehaviour {
 
 	void Start () {
-		//test
+		
 	}
 	
 }
