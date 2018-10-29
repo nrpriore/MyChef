@@ -87,7 +87,6 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         _lerp = false;
 
         // init
-        SetJumperScrollBar();
         SetPagePositions();
         SetPage(startingPage);
         InitPageSelection();
@@ -185,17 +184,11 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     }
 
     //------------------------------------------------------------------------
-    private void SetJumperScrollBar() {
-        scrollBar.size = (1f + MenuTabController.WIDTH_RATIO)/(_pageCount + MenuTabController.WIDTH_RATIO);
-    }
-
-    //------------------------------------------------------------------------
     private void SetPage(int aPageIndex) {
         aPageIndex = Mathf.Clamp(aPageIndex, 0, _pageCount - 1);
         _container.anchoredPosition = _pagePositions[aPageIndex];
         scrollBar.value = _tabPositions[aPageIndex];
         _currentPage = aPageIndex;
-        JumperTabs.SetTab(aPageIndex);
     }
 
     //------------------------------------------------------------------------
@@ -205,7 +198,6 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         _lerpTabTo = _tabPositions[aPageIndex];
         _lerp = true;
         _currentPage = aPageIndex;
-        JumperTabs.SetTab(aPageIndex);
     }
 
     //------------------------------------------------------------------------
