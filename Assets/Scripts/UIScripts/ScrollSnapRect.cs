@@ -36,7 +36,6 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     private RectTransform _scrollRectRect;
     private RectTransform _container;
     //private RectTransform _selectedTabRT;
-    public MenuTabController JumperTabs;
 
     private bool _horizontal;
 
